@@ -1,0 +1,95 @@
+:root {
+    --cor-fundo: #121213;
+    --cor-texto: #ffffff;
+    --cor-correta: #538d4e;    /* Verde: posição correta */
+    --cor-presente: #b59f3b;   /* Amarelo: posição incorreta */
+    --cor-ausente: #3a3a3c;    /* Cinza: não existe na palavra */
+    --cor-borda: #565758;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    margin-bottom: 25px;
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+}
+
+.celula {
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--cor-borda);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.celula.correta { background-color: var(--cor-correta); border-color: var(--cor-correta); }
+.celula.presente { background-color: var(--cor-presente); border-color: var(--cor-presente); }
+.celula.ausente { background-color: var(--cor-ausente); border-color: var(--cor-ausente); }
+
+.controles {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 160px;
+    text-align: center;
+    background-color: #2a2a2b;
+    color: white;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus { border-color: #818384; }
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--cor-borda);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button:hover { background-color: #818384; }
+button:disabled { background-color: #3a3a3c; cursor: not-allowed; }
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    height: 24px; 
+}
